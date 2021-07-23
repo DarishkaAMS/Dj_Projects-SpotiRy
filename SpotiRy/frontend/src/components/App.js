@@ -7,7 +7,7 @@ export default class App extends Component{
     }
 
     render(){
-        return (<h1>TESTING</h1>)
+        return (<h1>TESTING MY BEST App</h1>)
     }
 }
 
