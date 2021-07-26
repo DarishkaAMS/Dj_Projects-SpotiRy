@@ -45,7 +45,7 @@ export default class RoomJoinPage extends Component {
         </Grid>
         <Grid item xs={12} align="center">
           <Button variant="contained" color="secondary" to="/" component={Link}>
-            Back
+            Go Back
           </Button>
         </Grid>
       </Grid>
