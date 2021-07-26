@@ -71,7 +71,7 @@ export default class RoomJoinPage extends Component {
         if (response.ok) {
           this.props.history.push(`/room/${this.state.roomCode}`);
         } else {
-          this.setState({ error: "Room not found." });
+          this.setState({ error: "I have not found this Room ;(." });
         }
       })
       .catch((error) => {
