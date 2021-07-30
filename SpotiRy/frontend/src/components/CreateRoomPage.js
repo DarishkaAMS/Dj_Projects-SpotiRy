@@ -16,7 +16,7 @@ import Typography from "@material-ui/core/Typography";
 
 export default class CreateRoomPage extends Component {
   static defaultProps = {
-    votesToSkip: 2,
+    votesToSkip: 5,
     guestCanPause: true,
     update: false,
     roomCode: null,
@@ -77,11 +77,11 @@ export default class CreateRoomPage extends Component {
     fetch("/api/update-room", requestOptions).then((response) => {
       if (response.ok) {
         this.setState({
-          successMsg: "Room updated successfully!",
+          successMsg: "I have updated the Room successfully!",
         });
       } else {
         this.setState({
-          errorMsg: "Error updating room...",
+          errorMsg: "I couldn't update the Room",
         });
       }
       this.props.updateCallback();
@@ -124,7 +124,7 @@ export default class CreateRoomPage extends Component {
   }
 
   render() {
-    const title = this.props.update ? "Update Room" : "Create a Room";
+    const title = this.props.update ? "Update the Room" : "Create a Room";
 
     return (
       <Grid container spacing={1}>
