@@ -77,18 +77,18 @@ export default class CreateRoomPage extends Component {
     fetch("/api/update-room", requestOptions).then((response) => {
       if (response.ok) {
         this.setState({
-          successMsg: "I have updated the Room successfully =^_^=!",
+          successMsg: "Room updated successfully!",
         });
       } else {
         this.setState({
-          errorMsg: "I couldn't update the Room... :(",
+          errorMsg: "Error updating room...",
         });
       }
       this.props.updateCallback();
     });
   }
 
-  renderCreateButton() {
+  renderCreateButtons() {
     return (
       <Grid container spacing={1}>
         <Grid item xs={12} align="center">
@@ -109,7 +109,7 @@ export default class CreateRoomPage extends Component {
     );
   }
 
-  renderUpdateButton() {
+  renderUpdateButtons() {
     return (
       <Grid item xs={12} align="center">
         <Button
@@ -124,7 +124,7 @@ export default class CreateRoomPage extends Component {
   }
 
   render() {
-    const title = this.props.update ? "Update the Room" : "Create a Room";
+    const title = this.props.update ? "Update Room" : "Create a Room";
 
     return (
       <Grid container spacing={1}>
@@ -200,7 +200,9 @@ export default class CreateRoomPage extends Component {
             </FormHelperText>
           </FormControl>
         </Grid>
-        {this.props.update ? this.renderUpdateButton() : this.renderCreateButton()}
+        {this.props.update
+          ? this.renderUpdateButtons()
+          : this.renderCreateButtons()}
       </Grid>
     );
   }
